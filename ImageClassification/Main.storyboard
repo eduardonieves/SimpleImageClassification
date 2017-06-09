@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageClassification" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xt2-Da-By3"/>
+                        <viewControllerLayoutGuide type="bottom" id="eXY-bb-dr8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zdt-3d-bED">
+                                <rect key="frame" x="67" y="45" width="240" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="3aT-Tf-MYg"/>
+                                    <constraint firstAttribute="width" constant="240" id="Tuv-4d-Ppb"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tgJ-q9-VJl">
+                                <rect key="frame" x="43" y="447" width="288" height="158"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="852-5o-b3t">
+                                <rect key="frame" x="138" y="261" width="99" height="30"/>
+                                <state key="normal" title="Choose Image"/>
+                                <connections>
+                                    <action selector="chooseImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cnD-K8-sLR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNi-cA-UWJ">
+                                <rect key="frame" x="163" y="368" width="49" height="30"/>
+                                <state key="normal" title="Predict"/>
+                                <connections>
+                                    <action selector="predictButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qi9-Km-PQ9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ulb-lz-NLC">
+                                <rect key="frame" x="177" y="299" width="19" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Paste Image URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCe-uS-e4c">
+                                <rect key="frame" x="67" y="328" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="NYu-UK-QaO"/>
+                                    <constraint firstAttribute="height" constant="30" id="chv-vX-2dd"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SQK-ax-8dJ">
+                                <rect key="frame" x="177" y="406" width="20" height="20"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HCe-uS-e4c" firstAttribute="centerX" secondItem="zdt-3d-bED" secondAttribute="centerX" id="6s8-NE-XxK"/>
+                            <constraint firstItem="SQK-ax-8dJ" firstAttribute="centerX" secondItem="zdt-3d-bED" secondAttribute="centerX" id="Hkc-wN-q5L"/>
+                            <constraint firstItem="zdt-3d-bED" firstAttribute="top" secondItem="xt2-Da-By3" secondAttribute="bottom" constant="25" id="J9U-6y-8Ze"/>
+                            <constraint firstItem="852-5o-b3t" firstAttribute="centerX" secondItem="zdt-3d-bED" secondAttribute="centerX" id="Jw9-dg-fiK"/>
+                            <constraint firstItem="zdt-3d-bED" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="67" id="LsT-qz-DIV"/>
+                            <constraint firstItem="eNi-cA-UWJ" firstAttribute="centerX" secondItem="zdt-3d-bED" secondAttribute="centerX" id="Oo8-1p-9ge"/>
+                            <constraint firstAttribute="trailing" secondItem="zdt-3d-bED" secondAttribute="trailing" constant="68" id="Qho-vj-qhK"/>
+                            <constraint firstItem="Ulb-lz-NLC" firstAttribute="centerX" secondItem="zdt-3d-bED" secondAttribute="centerX" id="Syr-hT-jGC"/>
+                            <constraint firstItem="852-5o-b3t" firstAttribute="top" secondItem="zdt-3d-bED" secondAttribute="bottom" constant="26" id="VUq-rb-glJ"/>
+                            <constraint firstItem="Ulb-lz-NLC" firstAttribute="top" secondItem="852-5o-b3t" secondAttribute="bottom" constant="8" id="WhC-k9-oyl"/>
+                            <constraint firstItem="SQK-ax-8dJ" firstAttribute="top" secondItem="eNi-cA-UWJ" secondAttribute="bottom" constant="8" id="rIP-Dd-aAf"/>
+                            <constraint firstItem="HCe-uS-e4c" firstAttribute="top" secondItem="Ulb-lz-NLC" secondAttribute="bottom" constant="8" id="voT-N4-Xwa"/>
+                            <constraint firstItem="eNi-cA-UWJ" firstAttribute="top" secondItem="HCe-uS-e4c" secondAttribute="bottom" constant="10" id="xE7-vB-lJW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="SQK-ax-8dJ" id="rln-c0-qET"/>
+                        <outlet property="imageURLTextField" destination="HCe-uS-e4c" id="s5X-cc-FZ8"/>
+                        <outlet property="imageView" destination="zdt-3d-bED" id="iJo-Po-zFW"/>
+                        <outlet property="resultsTextView" destination="tgJ-q9-VJl" id="wE7-ht-OyW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86.5" y="153.5"/>
+        </scene>
+    </scenes>
+</document>
